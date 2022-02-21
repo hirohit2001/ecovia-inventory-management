@@ -1,0 +1,108 @@
+@hostname = http://localhost:4000
+
+### signup
+POST {{hostname}}/signup
+Content-Type: application/json
+
+{
+    "username": "Mohit",
+    "password": "Suri"
+}
+
+### signin
+POST {{hostname}}/signin
+Content-Type: application/json
+
+{
+    "username": "Rohit",
+    "password": "Sahu"
+}
+
+
+### create inventory
+POST {{hostname}}/createinventory
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlY292aWFuIjp7Il9pZCI6IjYyMTM2ZWE4YzdkYjU3YWJkZWQ5YjYyNyIsInVzZXJuYW1lIjoiTW9oaXQiLCJwYXNzd29yZCI6IiQyYSQxMCQvZml6R0FNVjEvNThXdU1KeTZQWHp1YWZTUDdHSjRGLkFVQXBMRjd5OHF2ajBQWU11Qml3ZSIsImNyZWF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NTA6NDkuMDUwWiIsInVwZGF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NTA6NDkuMDUwWiIsIl9fdiI6MH0sImlhdCI6MTY0NTQ0Mzg0MywiZXhwIjoxNjQ2MzA3ODQzfQ.WeNI3Qpm6LJMTBlDciYRIeLsdObfWo3Rz2wFADYB5mc
+Content-Type: application/json
+
+{
+    "name": "Hello Store",
+    "address": "xyz colony"
+}
+
+
+### pass the inventory to some other ecovian
+POST {{hostname}}/passinventory
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlY292aWFuIjp7Il9pZCI6IjYyMTM2ZWE4YzdkYjU3YWJkZWQ5YjYyNyIsInVzZXJuYW1lIjoiTW9oaXQiLCJwYXNzd29yZCI6IiQyYSQxMCQvZml6R0FNVjEvNThXdU1KeTZQWHp1YWZTUDdHSjRGLkFVQXBMRjd5OHF2ajBQWU11Qml3ZSIsImNyZWF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NTA6NDkuMDUwWiIsInVwZGF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NTA6NDkuMDUwWiIsIl9fdiI6MH0sImlhdCI6MTY0NTQ0Mzg0MywiZXhwIjoxNjQ2MzA3ODQzfQ.WeNI3Qpm6LJMTBlDciYRIeLsdObfWo3Rz2wFADYB5mc
+Content-Type: application/json
+
+{
+    "inventoryId": "62137be0db2e88e32e29a1b5",
+    "toEcovianId": "62136c872bba244cc54502bd"
+}
+
+
+### add bags
+POST {{hostname}}/addbags
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlY292aWFuIjp7Il9pZCI6IjYyMTM2Yzg3MmJiYTI0NGNjNTQ1MDJiZCIsInVzZXJuYW1lIjoiUm9oaXQiLCJwYXNzd29yZCI6IiQyYSQxMCRoOGdZVE5QU2cxZVUzekEwVlZhTXp1ZnNRd1dHMlpiL0VFc3g3NHpHNS5IQ2V1R3ROZTRJcSIsImNyZWF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsInVwZGF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsIl9fdiI6MH0sImlhdCI6MTY0NTQ0OTMxNywiZXhwIjoxNjQ2MzEzMzE3fQ.KnH7ESUTt6J-MFK2LU_kN-ahP31XoagZ-DWOxEb9dI8
+Content-Type: application/json
+
+{
+    "inventoryId": "62137be0db2e88e32e29a1b5",
+    "area": 2,
+    "bags": [
+        {
+            "size": 150,
+            "weight": 50,
+            "flapColour": "Hello"
+        },
+        {
+            "size": 150,
+            "weight": 70,
+            "flapColour": "World"
+        },
+        {
+            "size": 150,
+            "weight": 70,
+            "flapColour": "Blue"
+        }
+    ]
+}
+
+
+### move bags
+POST {{hostname}}/movebags
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlY292aWFuIjp7Il9pZCI6IjYyMTM2Yzg3MmJiYTI0NGNjNTQ1MDJiZCIsInVzZXJuYW1lIjoiUm9oaXQiLCJwYXNzd29yZCI6IiQyYSQxMCRoOGdZVE5QU2cxZVUzekEwVlZhTXp1ZnNRd1dHMlpiL0VFc3g3NHpHNS5IQ2V1R3ROZTRJcSIsImNyZWF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsInVwZGF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsIl9fdiI6MH0sImlhdCI6MTY0NTQ0OTMxNywiZXhwIjoxNjQ2MzEzMzE3fQ.KnH7ESUTt6J-MFK2LU_kN-ahP31XoagZ-DWOxEb9dI8
+Content-Type: application/json
+
+{
+    "inventoryId": "62137be0db2e88e32e29a1b5",
+    "area": 3,
+    "bagIds": ["09bb7d73-3684-4626-91bc-dcbec2c90eea", "5fd75134-44ae-415e-b47c-e09466252c21"]
+}
+
+
+### delete bags
+POST {{hostname}}/deletebags
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlY292aWFuIjp7Il9pZCI6IjYyMTM2Yzg3MmJiYTI0NGNjNTQ1MDJiZCIsInVzZXJuYW1lIjoiUm9oaXQiLCJwYXNzd29yZCI6IiQyYSQxMCRoOGdZVE5QU2cxZVUzekEwVlZhTXp1ZnNRd1dHMlpiL0VFc3g3NHpHNS5IQ2V1R3ROZTRJcSIsImNyZWF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsInVwZGF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsIl9fdiI6MH0sImlhdCI6MTY0NTQ0OTMxNywiZXhwIjoxNjQ2MzEzMzE3fQ.KnH7ESUTt6J-MFK2LU_kN-ahP31XoagZ-DWOxEb9dI8
+Content-Type: application/json
+
+{
+    "inventoryId": "62137be0db2e88e32e29a1b5",
+    "bagIds": ["402fdade-d766-46af-9999-b84789fa199c", "09bb7d73-3684-4626-91bc-dcbec2c90eea", "5fd75134-44ae-415e-b47c-e09466252c21"]
+}
+
+
+### get inventories
+GET {{hostname}}/getinventories
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlY292aWFuIjp7Il9pZCI6IjYyMTM2Yzg3MmJiYTI0NGNjNTQ1MDJiZCIsInVzZXJuYW1lIjoiUm9oaXQiLCJwYXNzd29yZCI6IiQyYSQxMCRoOGdZVE5QU2cxZVUzekEwVlZhTXp1ZnNRd1dHMlpiL0VFc3g3NHpHNS5IQ2V1R3ROZTRJcSIsImNyZWF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsInVwZGF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsIl9fdiI6MH0sImlhdCI6MTY0NTQ0OTMxNywiZXhwIjoxNjQ2MzEzMzE3fQ.KnH7ESUTt6J-MFK2LU_kN-ahP31XoagZ-DWOxEb9dI8
+
+
+
+### get inventory details
+POST {{hostname}}/inventorydetails
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlY292aWFuIjp7Il9pZCI6IjYyMTM2Yzg3MmJiYTI0NGNjNTQ1MDJiZCIsInVzZXJuYW1lIjoiUm9oaXQiLCJwYXNzd29yZCI6IiQyYSQxMCRoOGdZVE5QU2cxZVUzekEwVlZhTXp1ZnNRd1dHMlpiL0VFc3g3NHpHNS5IQ2V1R3ROZTRJcSIsImNyZWF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsInVwZGF0ZWRBdCI6IjIwMjItMDItMjFUMTA6NDA6MDUuMzk5WiIsIl9fdiI6MH0sImlhdCI6MTY0NTQ0OTMxNywiZXhwIjoxNjQ2MzEzMzE3fQ.KnH7ESUTt6J-MFK2LU_kN-ahP31XoagZ-DWOxEb9dI8
+Content-Type: application/json
+
+{
+    "inventoryId": "62137be0db2e88e32e29a1b5"
+}
