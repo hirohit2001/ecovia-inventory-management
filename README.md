@@ -79,6 +79,8 @@ This will install all the npm packages necessary to run this app
 <br>
 
 **APIS**
+##### Checkout the test-api.http file in the root folder to get a better view of the inputs to different apis
+
 
 ##### signup
 - ###### api:
