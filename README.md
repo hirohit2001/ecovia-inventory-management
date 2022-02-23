@@ -1,4 +1,5 @@
 # **ECOVIA INVENTORY MANAGEMENT**
+##### An ecovian inventory management software programme that may be used to keep track of all actions in an ecovian's inventory.
 
 **ASSUMED DB STRUCTURE**
 - Ecovian Collections
